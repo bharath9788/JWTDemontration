@@ -29,7 +29,7 @@ namespace JWTDemontration.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+       [Authorize]
         public IEnumerable<WeatherForecast> Get()
         {
             var rng = new Random();
@@ -66,7 +66,7 @@ namespace JWTDemontration.Controllers
 
                 var token = new JwtSecurityToken(
                     issuer: "bharath", // this should be in the config file
-                    audience: "Kumar",// this should be in the config file
+                    audience: "kumar",// this should be in the config file
                     claims,
                     expires: DateTime.Now.AddMinutes(20),
                     signingCredentials: cred

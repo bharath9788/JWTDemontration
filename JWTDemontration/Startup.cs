@@ -41,7 +41,7 @@ namespace JWTDemontration
                    ValidateIssuerSigningKey = true,
                    ValidIssuer = "bharath",
                    ValidAudience = "kumar",
-                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("BHarah12312312312131231232314"))
+                   IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is my secret key!!!"))
 
                };
            });
@@ -59,6 +59,7 @@ namespace JWTDemontration
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
